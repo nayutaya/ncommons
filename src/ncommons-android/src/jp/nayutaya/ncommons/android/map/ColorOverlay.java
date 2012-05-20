@@ -10,9 +10,19 @@ public class ColorOverlay extends Overlay
 {
     private final Paint paint;
 
+    public ColorOverlay()
+    {
+        this.paint = new Paint();
+    }
+
     public ColorOverlay(final Paint paint)
     {
         this.paint = paint;
+    }
+
+    public Paint getPaint()
+    {
+        return this.paint;
     }
 
     @Override
@@ -20,7 +30,7 @@ public class ColorOverlay extends Overlay
     {
         if ( shadow )
         {
-            canvas.drawRect(0.0f, 0.0f, mapView.getWidth(), mapView.getHeight(), this.paint);
+            canvas.drawRect(0.0f, 0.0f, mapView.getWidth(), mapView.getHeight(), this.getPaint());
         }
     }
 }
